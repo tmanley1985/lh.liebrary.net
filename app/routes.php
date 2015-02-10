@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array(
+	'as' => 'home', 
+	'uses' => 'PagesController@index'
+	)
+);
+
+// Creates a controller route for users
+
+Route::resource('users', 'UsersController');
+
+
