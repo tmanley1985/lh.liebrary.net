@@ -27,7 +27,7 @@
 			  </li>
 			  <li><a href="pricing.html">Pricing</a></li>
 			  <li>{{ HTML::link('users/create', 'Register') }}</li>   
-              <li>{{ HTML::link('users/login', 'Login') }}</li> 
+              <li>{{ HTML::link('/login', 'Login') }}</li> 
 			  <li class="dropdown">
 			    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Contact <b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu">
