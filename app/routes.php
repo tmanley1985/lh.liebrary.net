@@ -21,4 +21,11 @@ Route::get('/', array(
 
 Route::resource('users', 'UsersController');
 
+// Creates a route alias for login and creates a new session
+Route::get('login', 'SessionsController@create');
 
+// Creates a route alias for logout and destroys the session
+Route::get('logout', 'SessionsController@destroy');
+
+// Creates a resource route for Sessions
+Route::resource('sessions', 'SessionsController');
