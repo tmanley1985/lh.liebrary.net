@@ -5,9 +5,12 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
+
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+
 	use UserTrait, RemindableTrait;
+
 	public $timestamps = false;
 	/**
 	 * The database table used by the model.
@@ -38,11 +41,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public static function isValid($data)
 	{
+		// Passes input to Validator class and leverages it against rules
+
 		$validation = Validator::make($data, static::$rules);
 
 		if($validation->passes()){
 			return true;
 		}
+
+		//Creates an error message array
 
 		static::$messages = $validation->messages();
 
