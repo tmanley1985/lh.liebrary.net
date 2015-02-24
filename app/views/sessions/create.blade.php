@@ -7,7 +7,7 @@
 		  <div class="span12">
 		    <div class="well well-form txt-lefty">
               <h3>Sign In</h3>
-			  {{ Form::open() }}
+			  {{ Form::open( [ 'route' => 'sessions.store']) }}
 
 		        <div class="control-group">
 		          <div class="controls">
@@ -40,7 +40,11 @@
                     <input type="checkbox" name="remember">
                     Remember Me
                   </label> -->
-			      <button class="btn btn-primary" type="submit">Sign In</button>
+			       {{ Form::submit('Login', array(
+	                  	'class' => 'btn btn-primary',
+	                  	'type' => 'submit'
+
+	                  ))}}
                 </div> 
               {{ Form::close() }}
 		     <!-- <div class="form-extra">
