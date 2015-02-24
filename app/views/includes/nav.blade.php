@@ -26,15 +26,13 @@
 				</ul>
 			  </li>
 			  <li><a href="pricing.html">Pricing</a></li>
-			  <li>{{ HTML::link('users/create', 'Register') }}</li>   
-              <li>{{ HTML::link('/login', 'Login') }}</li> 
-			  <li class="dropdown">
-			    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Contact <b class="caret"></b></a>
-				<ul class="dropdown-menu" role="menu">
-				  <li><a href="contact.html" tabindex="-1">Default Contact</a></li>
-				  <li><a href="contact2.html" tabindex="-1">Alternative Contact</a></li>
-				</ul>
-			  </li>
+			  	@if(!Auth::check())
+			  		<li>{{ HTML::link('users/create', 'Register') }}</li> 
+             		 <li>{{ HTML::link('/login', 'Login') }}</li> 
+             	@else
+          			<li> {{ HTML::link('/', Auth::user()->username) }}</li>
+             		<li>{{ HTML::link('/logout', 'Logout') }}</li>
+             	@endif
             </ul>
 		  </div>
         </div>
